@@ -1,0 +1,505 @@
+/* ============================================
+   CONTACTO.CSS - Estilos de la Página de Contacto
+   Transformadores Web - VOLTRAN & INDUTRAF
+   ============================================ */
+
+/* ============================================
+   Contact Container
+   ============================================ */
+.contact-container {
+    padding: var(--spacing-3xl) 0;
+}
+
+.contact-split {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-half {
+    flex: 1 1 50%;
+    min-width: 300px;
+    padding: var(--spacing-2xl);
+}
+
+.contact-voltran {
+    background: linear-gradient(135deg, var(--voltran-light) 0%, var(--white) 100%);
+    border-right: 3px solid var(--voltran-primary);
+}
+
+.contact-indutraf {
+    background: linear-gradient(135deg, var(--indutraf-light) 0%, var(--white) 100%);
+    border-left: 3px solid var(--indutraf-primary);
+}
+
+/* ============================================
+   Contact Info Cards
+   ============================================ */
+.contact-info-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-info-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.contact-info-logo img,
+.contact-info-logo svg {
+    height: 50px;
+    width: auto;
+}
+
+.contact-info-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+}
+
+.contact-voltran .contact-info-title {
+    color: var(--voltran-primary);
+}
+
+.contact-indutraf .contact-info-title {
+    color: var(--indutraf-primary);
+}
+
+/* Contact Items */
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.contact-info-item:last-child {
+    border-bottom: none;
+}
+
+.contact-info-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+}
+
+.contact-voltran .contact-info-icon {
+    background: var(--voltran-light);
+    color: var(--voltran-primary);
+}
+
+.contact-indutraf .contact-info-icon {
+    background: var(--indutraf-light);
+    color: var(--indutraf-primary);
+}
+
+.contact-info-content {
+    flex: 1;
+}
+
+.contact-info-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-info-value {
+    font-size: var(--text-base);
+    color: var(--gray-800);
+}
+
+.contact-info-value a {
+    color: var(--gray-800);
+    transition: color var(--transition-fast);
+}
+
+.contact-voltran .contact-info-value a:hover {
+    color: var(--voltran-accent);
+}
+
+.contact-indutraf .contact-info-value a:hover {
+    color: var(--indutraf-accent);
+}
+
+/* ============================================
+   Contact Form Section
+   ============================================ */
+.form-section {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    background: var(--gray-100);
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    color: var(--gray-800);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-subtitle {
+    color: var(--gray-600);
+    font-size: var(--text-base);
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-label .required {
+    color: var(--error);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    transition: all var(--transition-fast);
+    background: var(--white);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--info);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.form-control.error {
+    border-color: var(--error);
+}
+
+.form-control.success {
+    border-color: var(--success);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Company Selector */
+.company-selector {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.company-option {
+    flex: 1;
+    min-width: 150px;
+}
+
+.company-option input {
+    display: none;
+}
+
+.company-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.company-option label:hover {
+    border-color: var(--gray-400);
+}
+
+.company-option input:checked + label {
+    border-width: 3px;
+}
+
+.company-option.voltran input:checked + label {
+    border-color: var(--voltran-primary);
+    background: var(--voltran-light);
+}
+
+.company-option.indutraf input:checked + label {
+    border-color: var(--indutraf-primary);
+    background: var(--indutraf-light);
+}
+
+.company-option-logo {
+    height: 40px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.company-option-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.company-option.voltran .company-option-name {
+    color: var(--voltran-primary);
+}
+
+.company-option.indutraf .company-option-name {
+    color: var(--indutraf-primary);
+}
+
+/* Form Error Messages */
+.form-error {
+    display: none;
+    font-size: var(--text-sm);
+    color: var(--error);
+    margin-top: var(--spacing-xs);
+}
+
+.form-group.has-error .form-error {
+    display: block;
+}
+
+.form-group.has-error .form-control {
+    border-color: var(--error);
+}
+
+/* Submit Button */
+.form-submit {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: linear-gradient(135deg, var(--voltran-primary), var(--indutraf-primary));
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-width: 200px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-submit .spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.btn-submit.loading .spinner {
+    display: block;
+}
+
+.btn-submit.loading .btn-text {
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   Form Messages
+   ============================================ */
+.form-message {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    display: none;
+}
+
+.form-message.show {
+    display: block;
+}
+
+.form-message.success {
+    background: rgba(56, 161, 105, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.form-message.error {
+    background: rgba(229, 62, 62, 0.1);
+    border: 1px solid var(--error);
+    color: var(--error);
+}
+
+.form-message-icon {
+    margin-right: var(--spacing-sm);
+}
+
+/* ============================================
+   Map Section (Placeholder)
+   ============================================ */
+.map-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+}
+
+.map-half {
+    flex: 1 1 50%;
+    min-width: 300px;
+    min-height: 300px;
+    position: relative;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.map-voltran .map-placeholder {
+    background: var(--voltran-dark);
+    color: var(--voltran-light);
+}
+
+.map-indutraf .map-placeholder {
+    background: var(--indutraf-dark);
+    color: var(--indutraf-light);
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.map-placeholder span {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+/* ============================================
+   Working Hours
+   ============================================ */
+.working-hours {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--gray-50);
+    border-radius: var(--border-radius-md);
+}
+
+.working-hours-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.working-hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.working-hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    font-size: var(--text-sm);
+}
+
+.working-hours-day {
+    color: var(--gray-700);
+}
+
+.working-hours-time {
+    font-weight: 500;
+    color: var(--gray-800);
+}

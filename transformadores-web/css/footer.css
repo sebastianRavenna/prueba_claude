@@ -1,0 +1,322 @@
+/* ============================================
+   FOOTER.CSS - Estilos del Footer
+   Transformadores Web - VOLTRAN & INDUTRAF
+   ============================================ */
+
+/* ============================================
+   Footer Principal
+   ============================================ */
+.main-footer {
+    background: linear-gradient(to right, var(--voltran-dark) 50%, var(--indutraf-dark) 50%);
+    color: var(--white);
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   Secciones del Footer (Dividido)
+   ============================================ */
+.footer-section {
+    flex: 1 1 50%;
+    min-width: 300px;
+    padding: var(--spacing-2xl);
+}
+
+.footer-voltran {
+    background: var(--voltran-dark);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-indutraf {
+    background: var(--indutraf-dark);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Logo en Footer
+   ============================================ */
+.footer-logo {
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-logo img,
+.footer-logo svg {
+    height: 60px;
+    width: auto;
+}
+
+/* ============================================
+   Información de Contacto
+   ============================================ */
+.footer-contact {
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-contact-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    color: var(--gray-300);
+}
+
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+}
+
+.footer-contact-item i {
+    margin-top: 3px;
+    font-size: var(--text-base);
+}
+
+.footer-voltran .footer-contact-item i {
+    color: var(--voltran-accent);
+}
+
+.footer-indutraf .footer-contact-item i {
+    color: var(--indutraf-accent);
+}
+
+.footer-contact-item a {
+    color: var(--gray-400);
+    transition: color var(--transition-fast);
+}
+
+.footer-voltran .footer-contact-item a:hover {
+    color: var(--voltran-accent);
+}
+
+.footer-indutraf .footer-contact-item a:hover {
+    color: var(--indutraf-accent);
+}
+
+/* ============================================
+   Redes Sociales
+   ============================================ */
+.footer-social {
+    margin-top: var(--spacing-lg);
+}
+
+.footer-social-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    color: var(--gray-500);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: var(--text-lg);
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.footer-voltran .social-link:hover {
+    background: var(--voltran-accent);
+}
+
+.footer-indutraf .social-link:hover {
+    background: var(--indutraf-accent);
+}
+
+/* ============================================
+   Certificaciones / Badges
+   ============================================ */
+.footer-certifications {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    margin-right: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.certification-badge i {
+    color: var(--success);
+}
+
+/* ============================================
+   Copyright Bar
+   ============================================ */
+.footer-copyright {
+    background: var(--black);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.copyright-text {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    text-align: center;
+}
+
+.copyright-text span {
+    margin: 0 var(--spacing-sm);
+}
+
+.footer-voltran-copy {
+    color: var(--voltran-accent);
+}
+
+.footer-indutraf-copy {
+    color: var(--indutraf-accent);
+}
+
+/* ============================================
+   Footer Responsive
+   ============================================ */
+@media (max-width: 991px) {
+    .main-footer {
+        background: var(--gray-900);
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        border-right: none;
+        border-left: none;
+        padding: var(--spacing-xl);
+    }
+
+    .footer-voltran {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-indutraf {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-contact,
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-certifications {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section {
+        padding: var(--spacing-lg);
+    }
+
+    .footer-logo img,
+    .footer-logo svg {
+        height: 50px;
+    }
+
+    .copyright-text {
+        flex-direction: column;
+    }
+
+    .copyright-text span {
+        display: block;
+        margin: var(--spacing-xs) 0;
+    }
+}
+
+/* ============================================
+   Back to Top Button
+   ============================================ */
+.back-to-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--voltran-primary), var(--indutraf-primary));
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: var(--text-xl);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-sticky);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}

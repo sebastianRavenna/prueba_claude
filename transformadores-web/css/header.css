@@ -1,0 +1,309 @@
+/* ============================================
+   HEADER.CSS - Estilos del Header y Navegación
+   Transformadores Web - VOLTRAN & INDUTRAF
+   ============================================ */
+
+/* ============================================
+   Header Principal
+   ============================================ */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    background: linear-gradient(to right, var(--voltran-dark) 50%, var(--indutraf-dark) 50%);
+    box-shadow: var(--shadow-lg);
+    height: 80px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   Logos Container
+   ============================================ */
+.logos-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+}
+
+.logo-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.logo-wrapper img,
+.logo-wrapper svg {
+    height: 50px;
+    width: auto;
+}
+
+.logo-divider {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--gray-500), transparent);
+}
+
+/* ============================================
+   Navegación Principal
+   ============================================ */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-xs);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--warning);
+    transition: all var(--transition-fast);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: var(--warning);
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--warning);
+}
+
+.nav-link.active::before {
+    width: 80%;
+}
+
+.nav-link i {
+    font-size: var(--text-base);
+}
+
+/* ============================================
+   Language Toggle
+   ============================================ */
+.language-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xs);
+}
+
+.lang-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    background: transparent;
+    color: var(--gray-400);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+}
+
+.lang-btn:hover {
+    color: var(--white);
+}
+
+.lang-btn.active {
+    background: var(--warning);
+    color: var(--gray-900);
+}
+
+.lang-divider {
+    color: var(--gray-600);
+    font-size: var(--text-sm);
+}
+
+/* ============================================
+   Mobile Menu Toggle
+   ============================================ */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: var(--z-modal);
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+    transform-origin: left;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* ============================================
+   Mobile Navigation
+   ============================================ */
+@media (max-width: 991px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, var(--voltran-dark) 0%, var(--indutraf-dark) 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: var(--spacing-xl);
+        transform: translateX(100%);
+        transition: transform var(--transition-base);
+        overflow-y: auto;
+    }
+
+    .main-nav.active {
+        transform: translateX(0);
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: var(--spacing-md);
+        font-size: var(--text-base);
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link::before {
+        display: none;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .language-toggle {
+        margin-left: 0;
+        margin-top: var(--spacing-xl);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--text-base);
+    }
+}
+
+/* ============================================
+   Header Scroll Effect
+   ============================================ */
+.main-header.scrolled {
+    height: 65px;
+    box-shadow: var(--shadow-xl);
+}
+
+.main-header.scrolled .logo-wrapper img,
+.main-header.scrolled .logo-wrapper svg {
+    height: 40px;
+}
+
+.main-header.scrolled .nav-link {
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* ============================================
+   Skip to Content (Accesibilidad)
+   ============================================ */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--warning);
+    color: var(--gray-900);
+    font-weight: 600;
+    z-index: var(--z-tooltip);
+    border-radius: var(--border-radius-sm);
+    transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+    top: var(--spacing-md);
+}

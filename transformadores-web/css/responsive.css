@@ -1,0 +1,512 @@
+/* ============================================
+   RESPONSIVE.CSS - Media Queries
+   Transformadores Web - VOLTRAN & INDUTRAF
+   ============================================ */
+
+/* ============================================
+   Extra Large Devices (1400px and up)
+   ============================================ */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+/* ============================================
+   Large Devices (992px to 1399px)
+   ============================================ */
+@media (max-width: 1399px) {
+    :root {
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+    }
+
+    .hero-half {
+        padding: var(--spacing-2xl);
+    }
+}
+
+/* ============================================
+   Medium Devices - Tablets (768px to 991px)
+   ============================================ */
+@media (max-width: 991px) {
+    /* Typography adjustments */
+    :root {
+        --text-5xl: 2.25rem;
+        --text-4xl: 1.875rem;
+        --text-3xl: 1.5rem;
+    }
+
+    /* Split Layout - Stack vertically */
+    .split-container,
+    .hero-section,
+    .contact-split,
+    .footer-container,
+    .page-header-split,
+    .map-section {
+        flex-direction: column;
+    }
+
+    .company-section,
+    .hero-half,
+    .contact-half,
+    .footer-section,
+    .page-header-half,
+    .map-half {
+        flex: 1 1 100%;
+        border-right: none;
+        border-left: none;
+    }
+
+    /* Borders for stacked sections */
+    .section-voltran,
+    .contact-voltran {
+        border-bottom: 3px solid var(--voltran-primary);
+        border-right: none;
+    }
+
+    .section-indutraf,
+    .contact-indutraf {
+        border-top: 3px solid var(--indutraf-primary);
+        border-left: none;
+    }
+
+    /* Services and Equipment - Intercalated Layout */
+    .services-container,
+    .equipment-container {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .services-row,
+    .equipment-row {
+        flex-direction: column;
+    }
+
+    .service-column,
+    .equipment-column {
+        flex: 1 1 100%;
+        padding: var(--spacing-md);
+    }
+
+    /* Order for intercalated display */
+    .services-row:nth-child(1) .service-column-voltran { order: 1; }
+    .services-row:nth-child(1) .service-column-indutraf { order: 2; }
+    .services-row:nth-child(2) .service-column-voltran { order: 3; }
+    .services-row:nth-child(2) .service-column-indutraf { order: 4; }
+    .services-row:nth-child(3) .service-column-voltran { order: 5; }
+    .services-row:nth-child(3) .service-column-indutraf { order: 6; }
+
+    .equipment-row:nth-child(1) .equipment-column-voltran { order: 1; }
+    .equipment-row:nth-child(1) .equipment-column-indutraf { order: 2; }
+    .equipment-row:nth-child(2) .equipment-column-voltran { order: 3; }
+    .equipment-row:nth-child(2) .equipment-column-indutraf { order: 4; }
+    .equipment-row:nth-child(3) .equipment-column-voltran { order: 5; }
+    .equipment-row:nth-child(3) .equipment-column-indutraf { order: 6; }
+
+    /* Hero adjustments */
+    .hero-half {
+        min-height: 50vh;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Values */
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Form */
+    .form-container {
+        padding: var(--spacing-xl);
+    }
+
+    .company-selector {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   Small Devices - Large Phones (576px to 767px)
+   ============================================ */
+@media (max-width: 767px) {
+    /* Typography */
+    :root {
+        --text-5xl: 2rem;
+        --text-4xl: 1.75rem;
+        --text-3xl: 1.375rem;
+        --text-2xl: 1.25rem;
+    }
+
+    /* Spacing */
+    .company-section,
+    .hero-half,
+    .contact-half {
+        padding: var(--spacing-xl);
+    }
+
+    /* Hero */
+    .hero-half {
+        min-height: 60vh;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* History */
+    .history-content {
+        max-width: 100%;
+    }
+
+    .history-timeline {
+        padding-left: var(--spacing-lg);
+    }
+
+    /* Stats */
+    .stats-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .stat-number {
+        font-size: var(--text-3xl);
+    }
+
+    /* Cards */
+    .card-industrial .card-img-container,
+    .service-img-container,
+    .equipment-img-container {
+        height: 180px;
+    }
+
+    /* Form */
+    .form-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .form-container {
+        padding: var(--spacing-lg);
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .form-group {
+        min-width: 100%;
+    }
+
+    /* Contact info */
+    .contact-info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info-icon {
+        margin: 0 auto;
+    }
+
+    /* Page Header */
+    .page-header-half {
+        padding: var(--spacing-xl);
+    }
+
+    .page-title {
+        font-size: var(--text-2xl);
+    }
+
+    /* Footer */
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-contact-list {
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Back to top */
+    .back-to-top {
+        right: var(--spacing-md);
+        bottom: var(--spacing-md);
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================
+   Extra Small Devices - Phones (up to 575px)
+   ============================================ */
+@media (max-width: 575px) {
+    /* Typography */
+    :root {
+        --text-5xl: 1.75rem;
+        --text-4xl: 1.5rem;
+        --text-3xl: 1.25rem;
+        --text-2xl: 1.125rem;
+        --text-xl: 1rem;
+    }
+
+    /* Header */
+    .main-header {
+        height: 70px;
+    }
+
+    .main-content {
+        padding-top: 70px;
+    }
+
+    .logos-container {
+        gap: var(--spacing-sm);
+    }
+
+    .logo-wrapper img,
+    .logo-wrapper svg {
+        height: 35px;
+    }
+
+    .logo-divider {
+        height: 30px;
+    }
+
+    /* Sections */
+    .company-section,
+    .hero-half,
+    .contact-half {
+        padding: var(--spacing-lg);
+    }
+
+    /* Hero */
+    .hero-half {
+        min-height: 70vh;
+    }
+
+    .hero-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+
+    .hero-cta {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--text-sm);
+    }
+
+    /* History */
+    .history-year {
+        font-size: var(--text-4xl);
+    }
+
+    .history-text {
+        font-size: var(--text-base);
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-number {
+        font-size: var(--text-2xl);
+    }
+
+    .stat-label {
+        font-size: var(--text-xs);
+    }
+
+    /* Values */
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        padding: var(--spacing-md);
+    }
+
+    /* Cards */
+    .service-card,
+    .equipment-card {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .service-body,
+    .equipment-body {
+        padding: var(--spacing-md);
+    }
+
+    .equipment-specs-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: var(--spacing-lg);
+    }
+
+    /* Form */
+    .form-container {
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .form-title {
+        font-size: var(--text-xl);
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+
+    /* Company selector mobile */
+    .company-option label {
+        padding: var(--spacing-md);
+    }
+
+    .company-option-logo {
+        height: 30px;
+    }
+
+    /* Footer */
+    .footer-section {
+        padding: var(--spacing-lg);
+    }
+
+    .footer-logo img,
+    .footer-logo svg {
+        height: 40px;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: var(--text-base);
+    }
+
+    .copyright-text {
+        font-size: var(--text-xs);
+    }
+
+    /* Maps */
+    .map-half {
+        min-height: 200px;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    .main-header,
+    .main-footer,
+    .back-to-top,
+    .language-toggle,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+
+    .main-content {
+        padding-top: 0;
+    }
+
+    .split-container,
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .company-section,
+    .hero-half {
+        flex: 1 1 100%;
+        page-break-inside: avoid;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ============================================
+   Reduced Motion (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   High Contrast Mode
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --voltran-primary: #003366;
+        --indutraf-primary: #1a3a1a;
+    }
+
+    .form-control {
+        border-width: 3px;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ============================================
+   Dark Mode Support (Future)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    /*
+    Uncomment to enable automatic dark mode
+
+    :root {
+        --gray-100: #1a202c;
+        --gray-200: #2d3748;
+        --gray-800: #f7fafc;
+        --white: #171923;
+    }
+    */
+}

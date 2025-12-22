@@ -1,0 +1,399 @@
+/* ============================================
+   EQUIPOS.CSS - Estilos de la Página de Equipos
+   Transformadores Web - VOLTRAN & INDUTRAF
+   ============================================ */
+
+/* ============================================
+   Equipment Container
+   ============================================ */
+.equipment-container {
+    padding: var(--spacing-3xl) 0;
+}
+
+.equipment-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.equipment-column {
+    flex: 1 1 50%;
+    min-width: 300px;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   Equipment Cards
+   ============================================ */
+.equipment-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.equipment-column-voltran .equipment-card::before {
+    background: linear-gradient(to right, var(--voltran-primary), var(--voltran-accent));
+}
+
+.equipment-column-indutraf .equipment-card::before {
+    background: linear-gradient(to right, var(--indutraf-primary), var(--indutraf-accent));
+}
+
+.equipment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Image Container */
+.equipment-img-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.equipment-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.equipment-card:hover .equipment-img-container img {
+    transform: scale(1.08);
+}
+
+/* Placeholder para imágenes */
+.equipment-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.equipment-column-voltran .equipment-img-placeholder {
+    background: linear-gradient(135deg, var(--voltran-dark) 0%, var(--voltran-primary) 100%);
+}
+
+.equipment-column-indutraf .equipment-img-placeholder {
+    background: linear-gradient(135deg, var(--indutraf-dark) 0%, var(--indutraf-primary) 100%);
+}
+
+/* Icono de transformador SVG simplificado */
+.equipment-img-placeholder .transformer-icon {
+    width: 120px;
+    height: 120px;
+    opacity: 0.3;
+}
+
+.equipment-img-placeholder .placeholder-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Badge de categoría */
+.equipment-category {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--text-xs);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius-sm);
+    color: var(--white);
+    backdrop-filter: blur(5px);
+}
+
+.equipment-column-voltran .equipment-category {
+    background: rgba(26, 54, 93, 0.9);
+}
+
+.equipment-column-indutraf .equipment-category {
+    background: rgba(45, 59, 45, 0.9);
+}
+
+/* Equipment Body */
+.equipment-body {
+    padding: var(--spacing-xl);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.equipment-column-voltran .equipment-title {
+    color: var(--voltran-primary);
+}
+
+.equipment-column-indutraf .equipment-title {
+    color: var(--indutraf-primary);
+}
+
+.equipment-title i {
+    font-size: var(--text-lg);
+}
+
+.equipment-subtitle {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+}
+
+.equipment-description {
+    color: var(--gray-600);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Specs Table */
+.equipment-specs {
+    background: var(--gray-50);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.equipment-specs-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.equipment-specs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-label {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.spec-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    color: var(--gray-800);
+}
+
+/* Equipment Footer */
+.equipment-footer {
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--gray-200);
+}
+
+.equipment-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-fast);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.equipment-column-voltran .equipment-btn {
+    background: var(--voltran-primary);
+}
+
+.equipment-column-voltran .equipment-btn:hover {
+    background: var(--voltran-secondary);
+}
+
+.equipment-column-indutraf .equipment-btn {
+    background: var(--indutraf-primary);
+}
+
+.equipment-column-indutraf .equipment-btn:hover {
+    background: var(--indutraf-secondary);
+}
+
+.equipment-btn i {
+    transition: transform var(--transition-fast);
+}
+
+.equipment-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Company Tag */
+.equipment-company-tag {
+    font-size: var(--text-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.equipment-column-voltran .equipment-company-tag {
+    background: var(--voltran-light);
+    color: var(--voltran-primary);
+}
+
+.equipment-column-indutraf .equipment-company-tag {
+    background: var(--indutraf-light);
+    color: var(--indutraf-primary);
+}
+
+/* ============================================
+   Equipment Divider
+   ============================================ */
+.equipment-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.equipment-divider-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--voltran-primary), var(--indutraf-primary));
+    border-radius: 50%;
+    color: var(--white);
+    font-size: var(--text-xl);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   Filter Tabs (opcional para futuro)
+   ============================================ */
+.equipment-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--gray-100);
+    margin-bottom: var(--spacing-xl);
+}
+
+.filter-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 2px solid var(--gray-300);
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    border-color: var(--gray-500);
+}
+
+.filter-btn.active {
+    background: var(--gray-800);
+    border-color: var(--gray-800);
+    color: var(--white);
+}
+
+/* ============================================
+   Technical Info Section
+   ============================================ */
+.technical-info-section {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    background: var(--gray-100);
+}
+
+.technical-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.technical-info-card {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.technical-info-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--voltran-light), var(--indutraf-light));
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--text-xl);
+    color: var(--gray-700);
+}
+
+.technical-info-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-800);
+}
+
+.technical-info-text {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    line-height: 1.7;
+}

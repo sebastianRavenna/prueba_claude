@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <defs>
+    <linearGradient id="indutrafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a7c4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3b2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="coilGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background hexagon shape (industrial) -->
+  <polygon points="32,10 57,22 57,58 32,70 7,58 7,22"
+           fill="url(#indutrafGradient)"
+           stroke="#2d3b2d"
+           stroke-width="1"/>
+
+  <!-- Transformer core symbol -->
+  <rect x="22" y="25" width="20" height="30" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Primary coil -->
+  <path d="M18 30 Q10 32 18 35 Q10 37 18 40 Q10 42 18 45 Q10 47 18 50"
+        stroke="url(#coilGradient)"
+        stroke-width="2.5"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Secondary coil -->
+  <path d="M46 30 Q54 32 46 35 Q54 37 46 40 Q54 42 46 45 Q54 47 46 50"
+        stroke="url(#coilGradient)"
+        stroke-width="2.5"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Core lines -->
+  <line x1="27" y1="30" x2="27" y2="50" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+  <line x1="37" y1="30" x2="37" y2="50" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Company name INDUTRAF -->
+  <text x="75" y="38" font-family="'Oswald', Arial, sans-serif" font-size="26" font-weight="700" fill="#2d3b2d" letter-spacing="2">
+    INDUTRAF
+  </text>
+
+  <!-- S.R.L. suffix -->
+  <text x="75" y="58" font-family="'Roboto', Arial, sans-serif" font-size="14" font-weight="400" fill="#3d4f3d" letter-spacing="1">
+    S.R.L.
+  </text>
+
+  <!-- Tagline -->
+  <text x="125" y="58" font-family="'Roboto', Arial, sans-serif" font-size="10" font-weight="300" fill="#718096" letter-spacing="1">
+    SOLUCIONES ELÉCTRICAS
+  </text>
+
+  <!-- Accent line -->
+  <rect x="75" y="62" width="180" height="2" fill="url(#indutrafGradient)" rx="1"/>
+</svg>
