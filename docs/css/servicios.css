@@ -20,6 +20,7 @@
     flex: 1 1 50%;
     min-width: 300px;
     padding: var(--spacing-2xl);
+    text-align: center;
 }
 
 .page-header-voltran {
