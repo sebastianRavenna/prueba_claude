@@ -4,6 +4,41 @@
    ============================================ */
 
 /* ============================================
+   Page Header
+   ============================================ */
+.page-header-split {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-header-half {
+    flex: 1 1 50%;
+    min-width: 300px;
+    padding: var(--spacing-2xl);
+    text-align: center;
+}
+
+.page-header-voltran {
+    background: linear-gradient(135deg, var(--voltran-primary), var(--voltran-dark));
+    color: var(--white);
+}
+
+.page-header-indutraf {
+    background: linear-gradient(135deg, var(--indutraf-primary), var(--indutraf-dark));
+    color: var(--white);
+}
+
+.page-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    font-size: var(--text-lg);
+    opacity: 0.9;
+}
+
+/* ============================================
    Equipment Container
    ============================================ */
 .equipment-container {
